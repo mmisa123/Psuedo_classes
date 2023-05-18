@@ -2,41 +2,43 @@ html {
     box-sizing: border-box;
   }
 
-  body {
+body {
     font-family: sans-serif;
     color: #0a0a23;
   }
 
-  span[class~="sr-only"] {
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(50%);
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    position: absolute;
-    padding: 0;
-    margin: -1px;
+
+
+span[class~="sr-only"] {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    clip-path: inset(50%) !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    position: absolute !important;
+    padding: 0 !important;
+    margin: -1px !important;
   }
 
-  h1 {
+h1 {
     max-width: 37.25rem;
     margin: 0 auto;
     padding: 1.5rem 1.25rem;
   }
 
-  h1 .flex {
+h1 .flex {
     display: flex;
     flex-direction: column-reverse;
     gap: 1rem;
   }
 
-  h1 .flex span:first-of-type {
+h1 .flex span:first-of-type {
     font-size: 0.7em;
   }
 
-  h1 .flex span:last-of-type {
+h1 .flex span:last-of-type {
     font-size: 1.2em;
   }
   
@@ -46,7 +48,7 @@ section {
     border: 2px solid #d0d0d5
   }
 
-  .years {
+#years {
     display: flex;
     justify-content: flex-end;
     position: sticky;
@@ -56,5 +58,50 @@ section {
     margin: 0  -2px;
     padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
     z-index: 999;
+    
   }
 
+ /*
+The span[class] syntax will target any span element that 
+has a class attribute set, regardless of the attribute's value.
+ */
+ #years span[class] {
+    font-weight: bold;
+    width: 4.5rem;
+    text-align: right;
+  }
+
+.table-wrap {
+    padding: 0 0.75rem 1.5rem 0.75rem
+    }
+
+/*
+###NOTES
+The :not() pseudo-selector is used to target all elements that 
+do not match the selector - in this case, 
+any span elements that do not have the sr-only class
+
+since !important keyword has been used in .sr-only class,
+:not(.sr-only) can be removed 
+*/
+span:not(.sr-only) {
+    font-weight: normal;
+}
+
+table {
+    border-collapse: collapse;
+    border: 0;
+    width: 100%;
+    margin-top: 3rem;
+    position: relative;
+    
+  }
+
+  table caption {
+    color: #356eaf;
+    font-size: 1.3em;
+    font-weight: normal;
+    position: absolute;
+    top: -2.25rem;
+    left: 0.5rem;
+  }

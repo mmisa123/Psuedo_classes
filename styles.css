@@ -158,3 +158,49 @@ tr.total:hover {
 td.current {
   font-style: italic;
 }
+
+/*
+The th element within the tr.data elements were selected. 
+The text was then aligned to the left, and given a 
+top padding of 0.3rem and a left padding of 0.5rem.
+*/
+tr.data th{
+  text-align: left;
+  padding: 0.3rem 0.5rem;
+}
+
+/*
+A tr.data th .description selector was created to target the 
+elements with the class set to description that are within the 
+th elements in the .data table rows. 
+A block display was given, the text was made italic with a normal weight, and position them with a 
+padding set to 1rem 0 0.75rem and a right margin of -13.5rem.
+*/
+tr.data th .description {
+  
+  display: block;
+  font-style: italic;
+  font-weight: normal;
+  padding: 1rem 0 0.75rem;
+  margin-right: -13.5rem;
+}
+/*
+The dollar amounts are currently misaligned. To align them, a selector was 
+created to target the td elements within the tr.data elements. 
+The text were vertically and horizontally aligned to the top and right, 
+respectively and the padding was set to 0.3rem 0.25rem 0.
+*/
+tr.data td {
+  vertical-align: top;
+  text-align: right;
+  padding: 0.3rem 0.25rem 0;
+}
+/*
+Another selector was created for the td elements within the tr.data element, 
+but specifically the last one was selected. 
+A right padding of 0.5rem was given to it.
+*/
+
+tr.data td:last-of-type {
+  padding-right: 0.5rem;
+}
